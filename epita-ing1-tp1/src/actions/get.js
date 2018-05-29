@@ -6,8 +6,11 @@
 * - you must use the functions from "../store"
 *
 */
-import data, {getState} from "../store"
+import data, {getState, setState} from "../store"
 
-const get = () => {return getState[0]};
+const get = (i) => {
+  const l = getState();
+  return l.find(i);
+};
 
 export default get;

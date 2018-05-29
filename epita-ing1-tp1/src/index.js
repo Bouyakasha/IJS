@@ -1,11 +1,12 @@
 import list from "./actions/list";
 import add from "./actions/add";
 import remove from "./actions/remove"
+import get from "./actions/get"
 
 const picturesGridElement = document.getElementById("pictures-grid");
 const pictureInputElement = document.getElementById("picture-url-input");
 const pictureAddButtonElement = document.getElementById("picture-add-button");
-const pictureRemoveButtonElement = document.getElementById("picture-update-button");
+//const pictureUpdateButtonElement = document.getElementById("picture-update-button");
 
 const pictureItemTemplate = document.getElementById("picture-item-template");
 
@@ -42,9 +43,6 @@ const refreshGrid = () => {
     const deleteButtonElement = clone.querySelector(
       ".picture-item-delete-button"
     );
-    const updateButtonElement = clone.querySelector(
-      ".picture-item-update-button"
-    );
 
     // FIXME: use your functions to delete the selected element
     deleteButtonElement.addEventListener("click", () => {
@@ -53,7 +51,11 @@ const refreshGrid = () => {
       refreshGrid();
     });
     
-    updateButtonElement.addEventListener("click", () => {});
+    //UPDATE PART
+    const updateButtonElement = clone.querySelector(
+      ".picture-item-update-button"
+    );
+    //updateButtonElement.addEventListener("click", () => {});
 
     fragment.appendChild(clone);
   });
