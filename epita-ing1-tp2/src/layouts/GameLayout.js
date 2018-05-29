@@ -36,6 +36,7 @@ class GameLayout extends React.Component {
       >
         <GameInfo currentPlayer= {this.state.currentPlayer} />
         <Board cells = {this.state.cells}/>
+        
       </div>
     );
   }
