@@ -23,7 +23,9 @@ const bis = {
   lineHeight: "200px",
   cursor: "pointer"
 }
+/*handleClickCell(index){
 
+}*/
 class Cell extends React.Component{
   constructor(props){
     super(props);
@@ -36,8 +38,8 @@ class Cell extends React.Component{
   return(
     <div 
       style = {this.state.isMouseOver? bis : cellStyle}
-      onMouseEnter = { () => this.setState({ isMouseOver: true})}
-      onMouseLeave={ () => this.setState({isMouseOver: false})}
+      onMouseOver={ () => this.setState({ isMouseOver: true})}
+      onMouseOut={ () => this.setState({isMouseOver: false})}
     > 
     </div>
   );
