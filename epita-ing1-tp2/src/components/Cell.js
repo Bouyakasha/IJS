@@ -37,7 +37,7 @@ class Cell extends React.Component{
   render(){ 
   return(
     <div 
-      style = {this.state.isMouseOver? bis : cellStyle}
+      style={this.state.isMouseOver? bis : cellStyle}
       onMouseOver={ () => this.setState({ isMouseOver: true})}
       onMouseOut={ () => this.setState({isMouseOver: false})}
     > 

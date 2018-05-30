@@ -28,14 +28,21 @@ class GameLayout extends React.Component {
     return state;
   }
 
+  handleClick(){
+    this.setState({
+        currentPlayer: this.state.currentPlayer === "player 2" ? "player 1" : "player 2"})
+    };
+
+
+
   render() {
     return (
       <div
         style={gameLayoutStyle}
-        onClick={() => this.setState({ currentPlayer: "toto" })}
+        onClick={() => this.handleClick()}/*setState({currentPlayer: this.state.currentPlayer === "player 2" ? "player 1" : "player 2"})}*/
       >
-        <GameInfo currentPlayer= {this.state.currentPlayer} />
-        <Board cells = {this.state.cells}/>
+        <GameInfo currentPlayer={this.state.currentPlayer} />
+        <Board cells={this.state.cells}/>
         
       </div>
     );
