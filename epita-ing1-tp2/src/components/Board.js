@@ -8,9 +8,16 @@ const boardStyle = {
   grid: "auto-flow dense / 1fr 1fr 1fr",
   gridAutoRows: "auto"
 };
-
+//ssshbuuynj
+//csdfcsff
+//errrrrrrrrrr
+//slt
 const Board = ({ cells = [] }) => (
-  <div style={boardStyle}>{cells.map(c => <Cell />)}</div>
+  <div
+      style={boardStyle}
+  >
+
+      {cells.map((c, index) => <Cell value="?" onClick={() => this.handleClickCell(index)} />)}</div>
 );
 
 export default Board;

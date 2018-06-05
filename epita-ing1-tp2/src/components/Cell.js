@@ -1,4 +1,6 @@
 import React from "react";
+import Board from "./Board";
+import GameLayout from "../layouts/GameLayout";
 
 const cellStyle = {
   display: "block",
@@ -23,24 +25,42 @@ const bis = {
   lineHeight: "200px",
   cursor: "pointer"
 }
-/*handleClickCell(index){
 
-}*/
+
+
 class Cell extends React.Component{
   constructor(props){
     super(props);
     this.state = {
       isMouseOver: false,
+        indexx: 0,
+        //value: null
     };
   }
 
-  render(){ 
+    handleClickCell(id){
+        if (this.state.cells[id]!==null) {return;}
+
+        const nemCells = [...this.state.cells];
+        nemCells[id] = this.state.currentPlayer === 'player 1' ? 'x' : 'o';
+        this.setState({
+            cells: nemCells,
+        })
+        debugger;
+    };
+  //ddzqdzqdzq
+  //gegesgesgsgssge
+//dedesdsdsd
+  render(){
   return(
-    <div 
+    <div
       style={this.state.isMouseOver? bis : cellStyle}
       onMouseOver={ () => this.setState({ isMouseOver: true})}
       onMouseOut={ () => this.setState({isMouseOver: false})}
-    > 
+
+    >
+        {this.state.value!==null ? this.state.value : '?'}
+
     </div>
   );
  }

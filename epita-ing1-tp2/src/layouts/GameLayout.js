@@ -32,15 +32,16 @@ class GameLayout extends React.Component {
     this.setState({
         currentPlayer: this.state.currentPlayer === "player 2" ? "player 1" : "player 2"})
     };
-
-
-
+//ffff
+//ddddzzz
+    //dddd
   render() {
     return (
       <div
         style={gameLayoutStyle}
         onClick={() => this.handleClick()}/*setState({currentPlayer: this.state.currentPlayer === "player 2" ? "player 1" : "player 2"})}*/
       >
+
         <GameInfo currentPlayer={this.state.currentPlayer} />
         <Board cells={this.state.cells}/>
         
