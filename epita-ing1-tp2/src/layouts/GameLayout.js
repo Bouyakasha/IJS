@@ -19,7 +19,6 @@ class GameLayout extends React.Component {
         this.state = {
             cells: Array(9).fill(null),
             currentPlayer: "player 1",
-            cellDisp: "x"
         };
     }
 
@@ -32,8 +31,21 @@ class GameLayout extends React.Component {
     handleClick(){
         this.setState({
             currentPlayer: this.state.currentPlayer === "player 2" ? "player 1" : "player 2",
-            cellDisp: this.state.cellDisp === "x" ? "o" : "x"});
+            /*cellDisp: this.state.cellDisp === "x" ? "o" : "x"*/
+        });
     };
+    onClickCell(id){
+        //this.setState({currentPlayer: this.state.currentPlayer === "player 2" ? "player 1" : "player 2"})
+        if (this.state.cells[id]!==null) {return;}
+
+        const nemCells = [...this.state.cells];
+        nemCells[id] = this.state.currentPlayer === 'player 1' ? 'x' : 'o';
+        this.setState({
+            cells: nemCells
+        })
+        debugger;
+    };
+    //,ikikopjikojikopjipikpo
 
     render() {
         return (
@@ -42,7 +54,7 @@ class GameLayout extends React.Component {
                 onClick={() => this.handleClick()}/*setState({currentPlayer: this.state.currentPlayer === "player 2" ? "player 1" : "player 2"})}*/
             >
                 <GameInfo currentPlayer={this.state.currentPlayer} />
-                <Board cells={this.state.cells}/>
+                <Board onClickCell={this.onClickCell()} cells={this.state.cells}/>
 
             </div>
         );

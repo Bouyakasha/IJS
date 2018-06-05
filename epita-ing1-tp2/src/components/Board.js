@@ -8,16 +8,13 @@ const boardStyle = {
   grid: "auto-flow dense / 1fr 1fr 1fr",
   gridAutoRows: "auto"
 };
-//ssshbuuynj
-//csdfcsff
-//errrrrrrrrrr
-//slt
-const Board = ({ cells = [] }) => (
+//55555
+const Board = ({ cells = [],onClickCell }) => (
   <div
       style={boardStyle}
   >
-
-      {cells.map((c, index) => <Cell value="?" onClick={() => this.handleClickCell(index)} />)}</div>
+      {cells.map((c, index) => <Cell value={c} onClick={() => onClickCell(index)} />)}</div>
 );
-
 export default Board;
+//++
+//4866746764648648

@@ -33,38 +33,27 @@ class Cell extends React.Component{
     super(props);
     this.state = {
       isMouseOver: false,
-        indexx: 0,
+        //indexx: 0,
         //value: null
     };
   }
+//89965
+//(6
+  //vvx
+    //8454564547
 
-    handleClickCell(id){
-        if (this.state.cells[id]!==null) {return;}
-
-        const nemCells = [...this.state.cells];
-        nemCells[id] = this.state.currentPlayer === 'player 1' ? 'x' : 'o';
-        this.setState({
-            cells: nemCells,
-        })
-        debugger;
-    };
-  //ddzqdzqdzq
-  //gegesgesgsgssge
-//dedesdsdsd
   render(){
   return(
     <div
       style={this.state.isMouseOver? bis : cellStyle}
       onMouseOver={ () => this.setState({ isMouseOver: true})}
       onMouseOut={ () => this.setState({isMouseOver: false})}
-
+      //onClick={ () => this.props.onClickCell(this.props.index)}
     >
-        {this.state.value!==null ? this.state.value : '?'}
+        {this.props.value!==null? this.props.value : '?'}
 
     </div>
   );
  }
 }
-
-
 export default Cell;
